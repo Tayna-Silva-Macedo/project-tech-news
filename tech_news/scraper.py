@@ -13,7 +13,7 @@ def fetch(url):
     HEADER = {"user-agent": "Fake user-agent"}
 
     try:
-        response = requests.get(url, header=HEADER, timeout=3)
+        response = requests.get(url, headers=HEADER, timeout=3)
         if response.status_code == 200:
             return response.text
     except (requests.ReadTimeout, requests.HTTPError):

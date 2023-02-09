@@ -21,20 +21,38 @@ def analyzer_menu():
         "5 - Sair.\n "
     )
 
-    if option_selected == "0":
-        amount = input("Digite quantas notícias serão buscadas: ")
-        return get_tech_news(amount)
-    elif option_selected == "1":
-        title = input("Digite o título: ")
-        return search_by_title(title)
-    elif option_selected == "2":
-        date = input("Digite a data no formato aaaa-mm-dd: ")
-        return search_by_date(date)
-    elif option_selected == "3":
-        category = input("Digite a categoria: ")
-        return search_by_category(category)
-    elif option_selected == "4":
-        return top_5_categories()
+    responses_input = {
+        "0": {
+            "message": "Digite quantas notícias serão buscadas: ",
+            "type": int,
+            "func": get_tech_news,
+        },
+        "1": {
+            "message": "Digite o título: ",
+            "type": str,
+            "func": search_by_title,
+        },
+        "2": {
+            "message": "Digite a data no formato aaaa-mm-dd: ",
+            "type": str,
+            "func": search_by_date,
+        },
+        "3": {
+            "message": "Digite a categoria: ",
+            "type": str,
+            "func": search_by_category,
+        },
+    }
+
+    responses = {"4": {"func": top_5_categories}}
+
+    if option_selected in responses_input.keys():
+        user_input = input(responses_input[option_selected]["message"])
+        return responses_input[option_selected]["func"](
+            responses_input[option_selected]["type"](user_input)
+        )
+    elif option_selected in responses.keys():
+        return responses[option_selected]["func"]()
     elif option_selected == "5":
         return print("Encerrando script")
     else:
