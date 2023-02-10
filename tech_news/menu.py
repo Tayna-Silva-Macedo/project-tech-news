@@ -9,7 +9,6 @@ from tech_news.analyzer.search_engine import (
 from tech_news.analyzer.ratings import top_5_categories
 
 
-# Requisitos 11 e 12
 def analyzer_menu():
     option_selected = input(
         "Selecione uma das opções a seguir:\n "

@@ -41,8 +41,8 @@ def test_reading_plan_group_news(mock_data, expected_response):
     with patch.object(
         ReadingPlanService, "_db_news_proxy", return_value=mock_data
     ) as mocked:
-        result = ReadingPlanService.group_news_for_available_time(2)
+        response = ReadingPlanService.group_news_for_available_time(2)
 
     mocked.assert_called_once()
 
-    assert result == expected_response
+    assert response == expected_response
