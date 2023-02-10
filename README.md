@@ -2,7 +2,7 @@
 
 Este é um projeto da [Trybe](https://www.betrybe.com/) que foi desenvolvido no módulo de Ciência da Computação.
 
-Trata-se de uma aplicação que realiza uma raspagem de dados no [Blog da Trybe](https://blog.betrybe.com/), salva as notícias em um banco de dados e permite realizar consultas pelo título da notícia, data de sua publicação ou qual a sua categoria, além disso, é possível listar quais são as cinco categorias que aparecem com maior frequência.
+Trata-se de uma aplicação que realiza uma raspagem de dados no [Blog da Trybe](https://blog.betrybe.com/), salva as notícias em um banco de dados e permite realizar consultas pelo título da notícia, data de sua publicação ou por sua categoria, além disso, é possível listar quais são as cinco categorias que aparecem com maior frequência.
 
 ## Tecnologias utilizadas
 
